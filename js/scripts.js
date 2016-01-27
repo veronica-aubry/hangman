@@ -13,28 +13,26 @@ var randomWordIndex = Math.floor(Math.random() * (max - min)) + min;
 
 //creates an array of blanks, with the number of blanks based on the random word's length//
 
-var blankMaker = function(element, num) {
-  var puzzleArray = [];
+var blankMaker = function(num) {
+
   for (var i = 0; i < num; i++) {
-    puzzleArray.push(element);
+    puzzleArray.push("_");
 }
   return puzzleArray;
-};
+}
 
 //finds user input letter in the wordSplit and returns indexes of all matches. Then replaces matching indexes on puzzleArray with the guessed letter//
 
 var letterQuest = function(source, find){
-  for (var i = 0; i < source.length; ++i) {
+  for (var i = 0; i <= source.length; ++i) {
     if (source.substring(i, i + find.length) == find) {
       puzzleArray[i] = find;
     }
-
-  } if 
-
-
+  }
+  if (puzzleArray.indexOf(find) === -1) {
+    count = count - 1;
+  }
   return puzzleArray;
-
-
   }
 
 
