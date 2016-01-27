@@ -1,19 +1,41 @@
-// Business Logic
-// var helloWorld = function(){
-//   return false;
-//
-//   For loops and shit go here
-//   If/else like a madman here
-//
-//  return shit like a mo-fo here
-//
-//   ...whatchyu lookin at bitch? Green those specs and git back to work!
-//  Time fo yo Interface Logic, then suckface when it's all green.
-// };
+
+var words = ["hello","goodbye", "marmalade"]
+var puzzleArray = [];
+var count = 0;
+//generates random word from words array and splits the characters up in its own array called wordSplit//
+
+function getRandomWord(min, max) {
+var randomWordIndex = Math.floor(Math.random() * (max - min)) + min;
+  var word = words[randomWordIndex];
+  var wordSplit = word.split('');
+  return wordSplit;
+}
+
+//creates an array of blanks, with the number of blanks based on the random word's length//
+
+var blankMaker = function(element, num) {
+  var puzzleArray = [];
+  for (var i = 0; i < num; i++) {
+    puzzleArray.push(element);
+}
+  return puzzleArray;
+};
+
+//finds user input letter in the wordSplit and returns indexes of all matches. Then replaces matching indexes on puzzleArray with the guessed letter//
+
+var letterQuest = function(source, find){
+  for (var i = 0; i < source.length; ++i) {
+    if (source.substring(i, i + find.length) == find) {
+      puzzleArray[i] = find;
+    }
+
+  } if 
 
 
+  return puzzleArray;
 
 
+  }
 
 
 
